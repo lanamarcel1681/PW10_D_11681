@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #0f172a, #1e3a8a, #0f172a);
+  color: white;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container-landing {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.contentLandingPage {
+  text-align: center;
+  z-index: 10;
+  animation: fadeIn 1s ease-in;
+  width: 100%;
+  max-width: 800px;
+}
+
+.judul {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  background: linear-gradient(to right, #22d3ee, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+}
+
+.text {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: #22d3ee;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  animation: float 6s ease-in-out infinite;
+}
+
+.judulContent {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: bold;
+  text-align: center;
+  color: #22d3ee;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.container-content {
+  padding: clamp(2rem, 6vw, 4rem) 2rem;
+  position: relative;
+}
+
+.kolom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.iconGamePad,
+.iconGameConsole,
+.iconHealthPotion,
+.iconRocket {
+  position: absolute;
+  color: #22d3ee;
+  opacity: 0.6;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  transition: opacity 0.3s ease;
+}
+
+.iconGamePad:hover,
+.iconGameConsole:hover,
+.iconHealthPotion:hover,
+.iconRocket:hover {
+  opacity: 0.8;
+}
+
+.iconGamePad {
+  top: clamp(10%, 20%, 25%);
+  left: clamp(5%, 15%, 20%);
+  animation: float 3s ease-in-out infinite;
+}
+
+.iconGameConsole {
+  top: clamp(15%, 30%, 35%);
+  right: clamp(5%, 15%, 20%);
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.iconHealthPotion {
+  bottom: clamp(15%, 25%, 30%);
+  left: clamp(10%, 20%, 25%);
+  animation: float 5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.iconRocket {
+  bottom: clamp(20%, 30%, 35%);
+  right: clamp(10%, 20%, 25%);
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #22d3ee, #3b82f6);
+  border-radius: 6px;
+  border: 3px solid #1e293b;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0891b2, #2563eb);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .container-landing {
+    padding: 1rem;
+  }
+
+  .iconGamePad,
+  .iconGameConsole,
+  .iconHealthPotion,
+  .iconRocket {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(to bottom, #0f172a, #1e3a8a, #0f172a);
+  }
+}
+
+@media print {
+  body {
+    background: none;
+    color: #000;
+  }
+
+  .judul {
+    color: #000;
+    -webkit-text-fill-color: initial;
+    text-shadow: none;
+  }
+}
